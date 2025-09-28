@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "1",
+    "title": "Sample task (you can edit this file)",
+    "completed": false,
+    "createdAt": "2025-09-27T07:58:48.332498+00:00"
+  },
+  {
+    "_id": "2",
+    "title": "Write a test",
+    "completed": false,
+    "createdAt": "2025-09-28T09:44:30.192Z"
+  }
+]
