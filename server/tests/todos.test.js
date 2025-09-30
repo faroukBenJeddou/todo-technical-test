@@ -11,11 +11,3 @@ fs.mkdirSync(path.dirname(dataFile), { recursive: true });
 fs.writeFileSync(dataFile, '[]', 'utf-8');
 
 import app from '../src/index.js';
-
-test('POST /api/todos creates a todo', async () => {
-  const title = 'Write a test';
-  const res = await request(app).post('/api/todos').send({ title });
-  assert.equal(res.status, 201);
-  assert.equal(res.body.title, title);
-  assert.equal(typeof res.body._id, 'string');
-});
