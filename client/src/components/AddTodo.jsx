@@ -4,12 +4,11 @@ export default function AddTodo({ onAdded }) {
   const [title, setTitle] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-
   async function onSubmit(e) {
     e.preventDefault()
     setError('')
     if (!title.trim()) { setError('Please enter a title'); return }
-    setLoading(True)
+    setLoading(true)
     try {
       const res = await fetch('/api/todos', {
         method: 'POST',
@@ -35,8 +34,10 @@ export default function AddTodo({ onAdded }) {
         placeholder="Add a todo (Easy)"
         value={title}
         onChange={e => setTitle(e.target.value)}
+
         style={{ flex: 1, padding: 8 }}
       />
+
       <button disabled={loading} type="submit">{loading ? 'Adding…' : 'Add'}</button>
       {error && <span style={{ color: 'crimson', marginLeft: 8 }}>{error}</span>}
     </form>
